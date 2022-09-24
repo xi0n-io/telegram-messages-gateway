@@ -159,7 +159,7 @@ def read_from_stdin(bot_api: str, chat_id: str) -> None:
         if status_code == API_RESPONSE_CODE_SUCCESS and verbose:  # Have there been any problems?
             print("Send '{}' to {}".format(message, chat_id))
 
-        else:
+        elif status_code != API_RESPONSE_CODE_SUCCESS:
             print("Could not send message ({})\n".format(status_code), file=sys.stderr)
 
 
