@@ -160,8 +160,7 @@ def read_from_stdin(bot_api: str, chat_id: str) -> None:
             print("Send '{}' to {}".format(message, chat_id))
 
         else:
-            error_message = "Could not send message ({})\n"
-            print(error_message.format(status_code), file=sys.stderr)
+            print("Could not send message ({})\n".format(status_code), file=sys.stderr)
 
 
 def send_direct_message(bot_api: str, chat_id: str, message: str) -> None:
@@ -178,8 +177,7 @@ def send_direct_message(bot_api: str, chat_id: str, message: str) -> None:
         print("Send '{}' to {}".format(message, chat_id))
 
     elif status_code != API_RESPONSE_CODE_SUCCESS:
-        error_message = "Could not send message ({})\n"
-        print(error_message.format(status_code), file=sys.stderr)
+        print("Could not send message ({})\n".format(status_code), file=sys.stderr)
 
 
 def get_chat_ids_from_json(json: dict) -> dict:
